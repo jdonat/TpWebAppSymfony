@@ -12,8 +12,8 @@
         <h1>{% if rollResult %}✅Winner{% else %}❌Looser{% endif %}! </h1>
         <p>Response : {% if rollResult %}true{% else %}false{% endif %}</p>
         <p>Game Master use a <b>{{ objectChoice }}</b>
-            {% if objectChoice == "Coin" %}{% else %}
-                with {{ maxValue }}{% if objectChoice == "Deck" %}cards{% else %}{{ objectChoice }}{% endif %}
+            {% if objectChoice != "Coin" %}
+                of {{ maxValue }}
             {% endif %}
             </p>
         <p>He's got a <b>{{ value }}</b> with a difficulty test of <b>{{ crtRate }}</b> %</p>
