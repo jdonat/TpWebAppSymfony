@@ -17,7 +17,7 @@ class MjController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        $crtRate = mt_rand(50, 80)/100;
+        $crtRate = mt_rand(20, 80)/100;
         $Results = $this->mj_object->rollForCrt($crtRate);
         $rollResult = $Results[0];
         $objectChoice = $Results[1];

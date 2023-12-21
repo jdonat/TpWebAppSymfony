@@ -56,7 +56,8 @@ class RandomMethodsAdapter
             $diceIndex = mt_rand(0,count($this->dices)-1);
             switch ($choice) {
                 case 0 :
-                    $value = $this->coins[$coinIndex]->getRandomInt();
+                    //echo "nombre de lancer : ".sprintf("%.3f", floor($threshold*10));
+                    $value = $this->coins[$coinIndex]->getRandomInt(floor($threshold*10));
                     $maxValue = 1;
                     $objectChoice = "Coin";
                     break;
@@ -71,7 +72,7 @@ class RandomMethodsAdapter
                     $objectChoice = "Dice";
                     break;
             }
-        $rollResult = ( $value >= $threshold);
+        $rollResult = ( $value >= $threshold*$maxValue);
         return [$rollResult, $objectChoice, $maxValue, $value];
     }
 }
