@@ -10,4 +10,10 @@ class Mj
     public function rollForCrt($crtRate) : array {
         return $this->chance->generateRandomMethod($crtRate);
     }
+    public function rollForCrtByObject($crtRate, $object) : array{
+        return $this->chance->generateMethodByObject($crtRate, $object);
+    }
+    public function getRandomObjects() : array{
+        return $this->chance->getRandomObjects();
+    }
 }

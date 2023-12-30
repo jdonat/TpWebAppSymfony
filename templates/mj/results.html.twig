@@ -46,38 +46,38 @@
     {{ form_start(form) }}
 
 
-        <div class="col">
-            <label for="form_difficulty">Difficulty</label>
-            <div id="frame-1">
-                {{ form_widget(form.difficulty, { 'attr': {'id': 'difficulty', 'min': 0, 'max': 100}, 'oninput': 'updateTextInput(this.value)'}) }}
+    <div class="col">
+        <label for="form_difficulty">Difficulty</label>
+        <div id="frame-1">
+            {{ form_widget(form.difficulty, { 'attr': {'id': 'difficulty', 'min': 0, 'max': 100}, 'oninput': 'updateTextInput(this.value)'}) }}
 
-            </div>
-
-            <div>
-                <span id="rangeValue">{{ form.vars.value.difficulty is not null ? form.vars.value.difficulty : '50' }}</span>
-
-            </div>
-
-
-            <turbo-stream action="update" target="unread_count">
-                <template>
-                    <!-- The contents of this template will replace the
-                    contents of the element with ID "unread_count" by
-                    setting innerHtml to "" and then switching in the
-                    template contents. Any handlers bound to the element
-                    "unread_count" would be retained. This is to be
-                    contrasted with the "replace" action above, where
-                    that action would necessitate the rebuilding of
-                    handlers. -->
-                    1
-                </template>
-            </turbo-stream>
-            {% for child in form.children %}
-                {% if child.vars.name starts with 'button_' %}
-                    {{ form_widget(child) }}
-                {% endif %}
-            {% endfor %}
         </div>
+
+        <div>
+            <span id="rangeValue">{{ form.vars.value.difficulty is not null ? form.vars.value.difficulty : '50' }}</span>
+
+        </div>
+
+
+        <turbo-stream action="update" target="unread_count">
+            <template>
+                <!-- The contents of this template will replace the
+                contents of the element with ID "unread_count" by
+                setting innerHtml to "" and then switching in the
+                template contents. Any handlers bound to the element
+                "unread_count" would be retained. This is to be
+                contrasted with the "replace" action above, where
+                that action would necessitate the rebuilding of
+                handlers. -->
+                1
+            </template>
+        </turbo-stream>
+        {% for child in form.children %}
+            {% if child.vars.name starts with 'button_' %}
+                {{ form_widget(child) }}
+            {% endif %}
+        {% endfor %}
+    </div>
 
 
     {{ form_end(form) }}
@@ -97,7 +97,7 @@
             </p>
             <p>He's got a <b>{{ value }}</b> with a difficulty test of <b>{{ crtRate }}</b> %</p>
         </div>
-        {% else %}
-1
+    {% else %}
+        1
     {% endif %}
 {% endblock %}

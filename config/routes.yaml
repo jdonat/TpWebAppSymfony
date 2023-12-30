@@ -1,5 +1,12 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+
+# config/routes.yaml
+home:
+    path:       /
+    controller: App\Controller\MjController::index
+    methods:    ['GET']
+
+
+results:
+    path:       /results
+    controller: App\Controller\MjController::results
+    methods:    ['GET', 'POST']

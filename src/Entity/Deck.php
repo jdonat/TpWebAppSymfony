@@ -10,6 +10,10 @@ class Deck
     protected int $nbCard = 0;
     protected int $cardNbValue = 0;
     protected int $colorNbValue = 0;
+    public string $max, $object;
+    protected int $id;
+
+
 
     public function __construct($nbCards)
     {
@@ -24,6 +28,18 @@ class Deck
         } catch (Error $e) {
             echo $e;
         }
+        $this->max = strval($nbCards);
+        $this->object = "Deck";
+        $this->id = -1;
+    }
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
     public function getNbCard() : int
     {

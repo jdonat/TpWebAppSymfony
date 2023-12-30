@@ -1,3 +1,12 @@
 body {
-    background-color: skyblue;
+    color: white;
+    background-color: rgba(0, 0, 0, .7);
+    background-image: url("./../img/tavern.webp");
+    background-repeat: no-repeat;
+}
+button {
+    margin : 5px 5px 5px 5px;
+}
+form {
+    background-color: rgba(0, 0, 0, .7);
 }
