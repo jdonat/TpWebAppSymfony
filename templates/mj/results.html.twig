@@ -4,100 +4,53 @@
 
 
 {% block body %}
-    <style>
-
-        .flexed {
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-            background-color: rgba(0, 0, 0, .7);
-            color: white;
-            align-items: center;
-            justify-content: center;
-            list-style: none;
-        }
-        .required {
-            color: white;
-        }
-        .col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-            color: white;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-            color: white;
-        }
-        .btn-object {
-            width: 60px;
-            height: 30px;
-            margin: 10px;
-        }
-        span {
-            color: white;
-        }
-    </style>
-
-    {{ form_start(form) }}
+    <div id="content">
+        <div id="menu">
+            {{ form_start(form) }}
 
 
-    <div class="col">
-        <label for="form_difficulty">Difficulty</label>
-        <div id="frame-1">
-            {{ form_widget(form.difficulty, { 'attr': {'id': 'difficulty', 'min': 0, 'max': 100}, 'oninput': 'updateTextInput(this.value)'}) }}
+            <div class="col">
+                <label for="form_difficulty">Difficulty</label>
+                <div id="frame-1">
+                    {{ form_widget(form.difficulty, { 'attr': {'id': 'difficulty', 'min': 0, 'max': 100}, 'oninput': 'updateTextInput(this.value)'}) }}
 
+                </div>
+
+                <div>
+                    <span id="rangeValue">{{ form.vars.value.difficulty is not null ? form.vars.value.difficulty : '50' }}</span>
+
+                </div>
+
+
+
+                {% for child in form.children %}
+                    {% if child.vars.name starts with 'button_' %}
+                        {{ form_widget(child) }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+
+            {{ form_end(form) }}
         </div>
-
-        <div>
-            <span id="rangeValue">{{ form.vars.value.difficulty is not null ? form.vars.value.difficulty : '50' }}</span>
-
-        </div>
+        <script src="{{ asset('your_script.js') }}"></script>
 
 
-        <turbo-stream action="update" target="unread_count">
-            <template>
-                <!-- The contents of this template will replace the
-                contents of the element with ID "unread_count" by
-                setting innerHtml to "" and then switching in the
-                template contents. Any handlers bound to the element
-                "unread_count" would be retained. This is to be
-                contrasted with the "replace" action above, where
-                that action would necessitate the rebuilding of
-                handlers. -->
+        <div id="results">
+            {% if rollResult is not null %}
+                <div id="rand-response" class="flexed">
+                    <h1>{% if rollResult %}✅Winner{% else %}❌Looser{% endif %}! </h1>
+                    <p>Response : {% if rollResult %}true{% else %}false{% endif %}</p>
+                    <p>Game Master use a <b>{{ objectChoice }}</b>
+                        {% if objectChoice != "Coin" %}
+                            of {{ maxValue }}
+                        {% endif %}
+                    </p>
+                    <p>He's got a <b>{{ value }}</b> with a difficulty test of <b>{{ crtRate }}</b> %</p>
+                </div>
+            {% else %}
                 1
-            </template>
-        </turbo-stream>
-        {% for child in form.children %}
-            {% if child.vars.name starts with 'button_' %}
-                {{ form_widget(child) }}
             {% endif %}
-        {% endfor %}
-    </div>
-
-
-    {{ form_end(form) }}
-
-    <script src="{{ asset('js/your_script.js') }}"></script>
-
-
-
-    {% if rollResult is not null %}
-        <div id="rand-response" class="flexed">
-            <h1>{% if rollResult %}✅Winner{% else %}❌Looser{% endif %}! </h1>
-            <p>Response : {% if rollResult %}true{% else %}false{% endif %}</p>
-            <p>Game Master use a <b>{{ objectChoice }}</b>
-                {% if objectChoice != "Coin" %}
-                    of {{ maxValue }}
-                {% endif %}
-            </p>
-            <p>He's got a <b>{{ value }}</b> with a difficulty test of <b>{{ crtRate }}</b> %</p>
         </div>
-    {% else %}
-        1
-    {% endif %}
+    </div>
 {% endblock %}

@@ -110,6 +110,7 @@ class MjController extends AbstractController
                         else{
                             $clickedButton = $object->object.$object->max;
                         }
+
                         break;
                     }
                 }
