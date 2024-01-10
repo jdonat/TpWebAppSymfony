@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2565cc15-aa6e-4bab-894f-7e0988eed772" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TPWebAppSymfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TPWebAppSymfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MjController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MjController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mj/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mj/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,11 @@
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="next" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\tools\php83\php.exe">
@@ -191,7 +193,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "forked",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/ZhL10/Desktop/radiocapitainePlugin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
