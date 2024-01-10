@@ -14,8 +14,17 @@ class MjController extends AbstractController
         $this->mj_object = new Mj();
     }
 
-    #[Route('/', name: 'home')]
+    #[Route('/', name: 'hom')]
     public function index(): Response
+    {
+
+        return $this->render('mj/index.html.twig', [
+            'controller_name' => 'MjController',
+            'texte' => "Hello World",
+        ]);
+    }
+    #[Route('/', name: 'mj')]
+    public function mjpage(): Response
     {
         $crtRate = mt_rand(20, 80)/100;
         $Results = $this->mj_object->rollForCrt($crtRate);
