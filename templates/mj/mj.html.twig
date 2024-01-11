@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Results of Game Masters{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Results</h1>
+        <div id="results">
+            {% if rollResult is not null %}
+                <div id="rand-response" class="flexed">
+                    <h1>{% if rollResult %}✅Winner{% else %}❌Looser{% endif %}! </h1>
+                    <p>Response : {% if rollResult %}true{% else %}false{% endif %}</p>
+                    <p>Game Master use a <b>{{ objectChoice }}</b>
+                        {% if objectChoice != "Coin" %}
+                            of {{ maxValue }}
+                        {% endif %}
+                    </p>
+                    <p>He's got a <b>{{ value }}</b> with a difficulty test of <b>{{ crtRate }}</b> %</p>
+                </div>
+            {% else %}
+                1
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

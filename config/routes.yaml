@@ -3,3 +3,21 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+login:
+    path: /admin/login
+    controller: App\Controller\LoginController::login
+login_check:
+    path: /admin/login_check
+logout:
+    path: /admin/logout
+admin:
+    path: /admin
+    controller: App\Controller\AdminController::admin
+mj:
+    path: /mj
+    controller: App\Controller\MjController::mj
+home:
+    path: /
+    controller: App\Controller\MjController::home
+forbidden:
+    path: /403

@@ -14,8 +14,7 @@ class MjController extends AbstractController
         $this->mj_object = new Mj();
     }
 
-    #[Route('/', name: 'hom')]
-    public function index(): Response
+    public function home(): Response
     {
 
         return $this->render('mj/index.html.twig', [
@@ -23,8 +22,8 @@ class MjController extends AbstractController
             'texte' => "Hello World",
         ]);
     }
-    #[Route('/', name: 'mj')]
-    public function mjpage(): Response
+
+    public function mj(): Response
     {
         $crtRate = mt_rand(20, 80)/100;
         $Results = $this->mj_object->rollForCrt($crtRate);
@@ -32,7 +31,7 @@ class MjController extends AbstractController
         $objectChoice = $Results[1];
         $maxValue = $Results[2];
         $value = $Results[3];
-        return $this->render('mj/index.html.twig', [
+        return $this->render('mj/mj.html.twig', [
             'controller_name' => 'MjController',
             'rollResult' => $rollResult,
             'objectChoice' => $objectChoice,

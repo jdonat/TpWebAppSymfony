@@ -5,10 +5,30 @@ security:
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         users_in_memory: { memory: null }
+        backend_users:
+            memory:
+                users:
+                    admin@it.fr: { password: '$2y$13$yVnFmLcWQnawIvxs/xqJpOAYlLJtCccVozeGbwWSOTVdJFx7d3Xf6', roles: [ 'ROLE_ADMIN' ] }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        admin:
+            provider: backend_users
+            pattern: ^/admin
+            security: true
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: admin
+                always_use_default_target_path: true
+                failure_path: login
+            logout:
+                path: /admin/logout
+                clear_site_data:
+                    - cookies
+                    - storage
+            context: the_context
         main:
             lazy: true
             provider: users_in_memory
