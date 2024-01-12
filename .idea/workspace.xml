@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2565cc15-aa6e-4bab-894f-7e0988eed772" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/TPWebAppSymfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TPWebAppSymfony.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +202,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< Updated upstream
     "git-widget-placeholder": "master",
+=======
+    "git-widget-placeholder": "forked",
+>>>>>>> Stashed changes
     "last_opened_file_path": "C:/Users/ZhL10/Desktop/radiocapitainePlugin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+<<<<<<< Updated upstream
+=======
+    "php.add.doc.comment.for.fields.panel.add.php.doc.for.all.properties": "true",
+>>>>>>> Stashed changes
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -213,6 +230,11 @@
       <updated>1704882550220</updated>
       <workItem from="1704882551252" duration="46000" />
       <workItem from="1704882598499" duration="2534000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1704993478034" duration="7490000" />
+      <workItem from="1705063499051" duration="7473000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
