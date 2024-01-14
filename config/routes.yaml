@@ -19,5 +19,9 @@ mj:
 home:
     path: /
     controller: App\Controller\MjController::home
-forbidden:
-    path: /403
+user_create:
+    path: /admin/user-create
+    controller: App\Controller\UserController::user_create
+user_check:
+    path: /admin/user-check
+    controller: App\Controller\UserController::user_check

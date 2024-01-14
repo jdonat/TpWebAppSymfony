@@ -7,9 +7,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    protected string $email;
+        protected string $password;
     public function __construct(
-        protected string $email,
-        protected string $password,
+
     ){}
     private int $id;
     private array $roles = [];
