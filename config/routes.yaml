@@ -1,8 +1,4 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+
 login:
     path: /admin/login
     controller: App\Controller\LoginController::login
@@ -10,6 +6,21 @@ login_check:
     path: /admin/login_check
 logout:
     path: /admin/logout
+user_create:
+    path: /admin/user-create
+    controller: App\Controller\UserController::user_create
+user_check:
+    path: /admin/user-check
+    controller: App\Controller\UserController::user_check
+user_list:
+    path: /admin/users
+    controller: App\Controller\UserController::user_list
+user_edit:
+    path: /admin/users/{id}/edit
+    controller: App\Controller\UserController::user_edit
+user_delete:
+    path: /admin/users/{id}/delete
+    controller: App\Controller\UserController::user_delete
 admin:
     path: /admin
     controller: App\Controller\AdminController::admin
@@ -19,9 +30,3 @@ mj:
 home:
     path: /
     controller: App\Controller\MjController::home
-user_create:
-    path: /admin/user-create
-    controller: App\Controller\UserController::user_create
-user_check:
-    path: /admin/user-check
-    controller: App\Controller\UserController::user_check

@@ -1,0 +1,24 @@
+App\Entity\UserAccount:
+    type: entity
+    actAs:
+    Timestampable: ~
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO } 
+    fields:
+        firstname:
+            type: string
+            nullable: false
+        lastname:
+            type: string
+            nullable: false
+        email:
+          type: string
+          nullable: false
+        password:
+          type: string
+          nullable: false
+        roles:
+          type: array
+          nullable: false

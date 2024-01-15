@@ -1,10 +1,10 @@
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
+        App\Entity\UserAccount: 'auto'
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
-        users_in_memory: { memory: null }
         backend_users:
             memory:
                 users:
@@ -13,25 +13,25 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
         admin:
-            provider: backend_users
             pattern: ^/admin
             security: true
+            lazy: false
+            provider: backend_users
             form_login:
                 login_path: login
                 check_path: login_check
-                default_target_path: admin
-                always_use_default_target_path: true
-                failure_path: login
+                #default_target_path: admin
+                #always_use_default_target_path: true
+                #failure_path: login
             logout:
                 path: /admin/logout
                 clear_site_data:
                     - cookies
                     - storage
-            context: the_context
         main:
-            lazy: true
-            provider: users_in_memory
+            security: false
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -42,8 +42,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+    # - { path: ^/admin, roles: ROLE_ADMIN }
+    # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:

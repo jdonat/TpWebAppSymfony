@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <table>
+        <tbody>
+
+    {% for user in users %}
+        <tr>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.email }}</td>
+            {% for role in user.roles %}
+                <td>{{ role }}</td>
+            {% endfor %}
+            <td><button type="button" onclick="location.href = '{{ path('user_edit', {'id' : user.id}) }}';">Edit</button></td>
+            <td><button type="button" onclick="location.href = '{{ path('user_delete', {'id' : user.id}) }}';">Delete</button></td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
