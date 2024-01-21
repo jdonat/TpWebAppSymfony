@@ -8,12 +8,9 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     protected string $email;
-        protected string $password;
-    public function __construct(
-
-    ){}
-    private int $id;
-    private array $roles = [];
+    protected string $password;
+    protected int $id;
+    protected array $roles = [];
     public function getId(): ?int
     {
         return $this->id;

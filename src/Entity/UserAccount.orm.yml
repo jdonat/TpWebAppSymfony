@@ -20,5 +20,5 @@ App\Entity\UserAccount:
           type: string
           nullable: false
         roles:
-          type: array
+          type: json
           nullable: false

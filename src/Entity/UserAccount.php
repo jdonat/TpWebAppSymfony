@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 
-class UserAccount
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+
+class UserAccount implements PasswordAuthenticatedUserInterface
 {
     protected int $id;
     protected string $firstname;

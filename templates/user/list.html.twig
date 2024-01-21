@@ -9,22 +9,53 @@
 </style>
 
 <div class="example-wrapper">
-    <table>
-        <tbody>
+    <button type="button" onclick="location.href = '{{ path('user_create') }}';">Create User</button>
+    <button type="button" onclick="location.href = '{{ path('user_list_role', {'role' : 'ROLE_USER'}) }}';">ROLE_USER</button>
+    <button type="button" onclick="location.href = '{{ path('user_list_role', {'role' : 'ROLE_ADMIN'}) }}';">ROLE_ADMIN</button>
+    <button type="button" onclick="location.href = '{{ path('user_list_role', {'role' : 'ROLE_SUPER_ADMIN'}) }}';">ROLE_SUPER_ADMIN</button>
+    {%  if edit_mode is defined %}
+    <form>
 
-    {% for user in users %}
-        <tr>
-            <td>{{ user.firstname }}</td>
-            <td>{{ user.lastname }}</td>
-            <td>{{ user.email }}</td>
-            {% for role in user.roles %}
+        <input type="text" value="{{ user.firstname }}"></input>
+        <input type="text" value="{{ user.lastname }}"></input>
+        <input type="email" value="{{ user.email }}"></input>
+        <input type="password" value="{{ user.password }}"></input>
+        <input type="checkbox">
+        {% for role in user.roles %}
                 <td>{{ role }}</td>
             {% endfor %}
-            <td><button type="button" onclick="location.href = '{{ path('user_edit', {'id' : user.id}) }}';">Edit</button></td>
-            <td><button type="button" onclick="location.href = '{{ path('user_delete', {'id' : user.id}) }}';">Delete</button></td>
-        </tr>
-    {% endfor %}
-        </tbody>
-    </table>
+        <button type="button" onclick="location.href = '{{ path('user_save', {'id' : user.id}) }}';">Save</button>
+
+    </form>
+        {%  else %}
+        <table>
+            <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Roles</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.email }}</td>
+
+                    {% for role in user.roles %}
+                        <td>{{ role }}</td>
+                    {% endfor %}
+
+                <td><button type="button" onclick="location.href = '{{ path('user_edit', {'id' : user.id}) }}';">Edit</button></td>
+                <td><button type="button" onclick="location.href = '{{ path('user_delete', {'id' : user.id}) }}';">Delete</button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% endif %}
+
 </div>
 {% endblock %}

@@ -1,4 +1,16 @@
 
+user_edit:
+    path: /admin/users/{id}/edit
+    controller: App\Controller\UserController::user_edit
+user_save:
+    path: /admin/users/{id}/save
+    controller: App\Controller\UserController::user_save
+user_delete:
+    path: /admin/users/{id}/delete
+    controller: App\Controller\UserController::user_delete
+user_list_role:
+    path: /admin/users/{role}
+    controller: App\Controller\UserController::user_list_role
 login:
     path: /admin/login
     controller: App\Controller\LoginController::login
@@ -15,12 +27,6 @@ user_check:
 user_list:
     path: /admin/users
     controller: App\Controller\UserController::user_list
-user_edit:
-    path: /admin/users/{id}/edit
-    controller: App\Controller\UserController::user_edit
-user_delete:
-    path: /admin/users/{id}/delete
-    controller: App\Controller\UserController::user_delete
 admin:
     path: /admin
     controller: App\Controller\AdminController::admin

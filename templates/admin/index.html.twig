@@ -10,5 +10,7 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ user }} !</h1>
+    <button type="button" onclick="location.href = '{{ path('user_create') }}';">Create User</button>
+    <button type="button" onclick="location.href = '{{ path('user_list') }}';">List Users</button>
 </div>
 {% endblock %}

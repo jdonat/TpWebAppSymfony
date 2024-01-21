@@ -9,6 +9,9 @@ security:
             memory:
                 users:
                     admin@it.fr: { password: '$2y$13$yVnFmLcWQnawIvxs/xqJpOAYlLJtCccVozeGbwWSOTVdJFx7d3Xf6', roles: [ 'ROLE_ADMIN' ] }
+        users:
+            entity:
+                class: 'App\Entity\UserAccount'
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -22,9 +25,9 @@ security:
             form_login:
                 login_path: login
                 check_path: login_check
-                #default_target_path: admin
-                #always_use_default_target_path: true
-                #failure_path: login
+                default_target_path: admin
+                always_use_default_target_path: true
+                failure_path: login
             logout:
                 path: /admin/logout
                 clear_site_data:
